@@ -1,19 +1,29 @@
-.rightBorder {
+.right-border {
+	padding-right: 135px;
 	border-right: solid white;
 }
 
-.leftBorder {
+.left-border {
 	border-left: solid white;
 }
 
-.sharpBorder {
+.center-text {
+	text-align:middle;
+}
+
+.sharp-border {
 	border-radius: 0px;
 }
 
-.noPadding {
+.no-padding {
 	padding: 0px;
 }
 
-.noMargin {
+.no-margin {
 	margin: 0px;
 }
+
+.fix-right {
+    float: right !important;
+    margin-right: -15px;
+  }
