@@ -1,10 +1,12 @@
 .right-border {
-	padding-right: 135px;
-	border-right: solid white;
+	padding-right: 133px;
+	border-right: solid black;
+	border-width: 2px;
 }
 
 .left-border {
-	border-left: solid white;
+	border-left: solid black;
+	border-width: 2px;
 }
 
 .center-text {
@@ -23,7 +25,12 @@
 	margin: 0px;
 }
 
-.fix-right {
-    float: right !important;
-    margin-right: -15px;
-  }
+.navbar-fixed-top {
+    min-height: 70px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 70px;
+}
