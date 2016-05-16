@@ -1,15 +1,17 @@
 .sidebar-container {
 	position: fixed;
     overflow-y: auto;
+	overflow:visible;
     background: #000;
 	height: 100%;
-	width: 200px;
+	width: 250px;
+	z-index:10;
 }
 
 .sidebar {
-    position: relative;
+	position: relative;
     top: 0;
-    width: 200px;
+    width: 250px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -39,9 +41,26 @@
     text-decoration: none;
     color: #fff;
     background: rgba(255,255,255,0.2);
+	cursor: pointer; 
+	cursor: hand;
 }
 
 .sidebar li a:active,
 .sidebar li a:focus {
     text-decoration: none;
 }
+
+.popup {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.popup.toggled {
+	margin-left: 20px;
+	width: 250px;
+	background: #000;
+	z-index:0;
+}
+

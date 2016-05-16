@@ -40,11 +40,11 @@
 		</li>
 	
 		<li>
-			<a href="#">1st Floor</a>
+			<a class="popup" onclick="toggle(this)">1st Floor</a>
 		</li>
 		
 		<li>
-			<a href="#">2nd Floor</a>
+			<a class="popup" onclick="toggle(this)">2nd Floor</a>
 		</li>
 	
 		<li>
@@ -52,15 +52,15 @@
 		</li>
 	
 		<li>
-			<a href="#">Lights</a>
+			<a class="popup" onclick="toggle(this)">Lights</a>
 		</li>
 		
 		<li>
-			<a href="#">Appliances</a>
+			<a class="popup" onclick="toggle(this)">Appliances</a>
 		</li>
 		
 		<li>
-			<a href="#">Temperature</a>
+			<a class="popup" onclick="toggle(this)">Temperature</a>
 		</li>
 
 		<li>
@@ -68,21 +68,25 @@
 		</li>
 		
 		<li>
-			<a href="#">Video Survelliance</a>
+			<a class="popup" onclick="toggle(this)">Video Survelliance</a>
 		</li>
 		
 		<li>
-			<a href="#">Doors</a>
+			<a class="popup" onclick="toggle(this)">Doors</a>
 		</li>
 		
 		<li>
-			<a href="#">Windows</a>
+			<a class="popup" onclick="toggle(this)">Windows</a>
 		</li>	
 		
 	</ul>
 </div>
 
-
+<script>
+function toggle(e){
+	$(e).toggleClass("toggled");
+}
+</script>
 
 </body>
 </html>
