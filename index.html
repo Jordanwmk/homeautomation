@@ -5,7 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link href="../css/style.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet"/>
+	<link href="css/simple-sidebar.css" rel="stylesheet"/>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -13,24 +14,63 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse noMargin sharpBorder">
 	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand rightBorder" href="#">XYZ Logo Here</a>
+		<div class="navbar-header rightBorder">
+			<a class="navbar-brand" href="#">XYZ Logo Here</a>
 		</div>
 		
 		<ul class="nav navbar-nav">
 		</ul>
 		
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="#"><span class="glyphicon glyphicon-user leftBorder"></span> Sign Up</a></li>
+		<ul class="nav navbar-nav navbar-right leftBorder">
+			<li><a href="#"><span class="glyphicon glyphicon-user "></span> Sign Up</a></li>
 		</ul>
 	</div>
-</nav>
-  
-<div class="container">
-
 </div>
+  
+<div id="wrapper">
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+		
+			<li class="sidebar-brand">
+				<a href="#">General</a>
+			</li>
+			
+			<li>
+				<a href="#">Lights</a>
+			</li>
+			
+			<li>
+				<a href="#">Appliances</a>
+			</li>
+			
+			<li>
+				<a href="#">Temperature</a>
+			</li>
+
+
+			<li class="sidebar-brand">
+				<a href="#">Security</a>
+			</li>
+			
+			<li>
+				<a href="#">Video Survelliance</a>
+			</li>
+			
+			<li>
+				<a href="#">Doors</a>
+			</li>
+			
+			<li>
+				<a href="#">Windows</a>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+
 
 </body>
 </html>
