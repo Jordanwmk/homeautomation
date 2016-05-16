@@ -1,7 +1,6 @@
 .sidebar-container {
 	position: fixed;
-    overflow-y: auto;
-	overflow:visible;
+	overflow-y:visible;
     background: #000;
 	height: 100%;
 	width: 250px;
@@ -39,7 +38,7 @@
 .sidebar li a:hover {
     text-decoration: none;
     color: #fff;
-    background: rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.2);
 	cursor: pointer; 
 	cursor: hand;
 }
