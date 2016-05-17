@@ -34,7 +34,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="438.77169"
+     inkscape:cx="228.0574"
      inkscape:cy="315.74505"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
@@ -54,7 +54,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -128,17 +128,17 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="100"
-       y="175.52306"
+       x="108.57143"
+       y="66.95163"
        id="text5392"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5394"
-         x="100"
-         y="175.52306">Master</tspan><tspan
+         x="108.57143"
+         y="66.95163">Master</tspan><tspan
          sodipodi:role="line"
-         x="100"
-         y="225.52306"
+         x="108.57143"
+         y="116.95163"
          id="tspan5484">Bedroom</tspan></text>
     <text
        xml:space="preserve"
@@ -155,24 +155,24 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="445.71426"
-       y="258.38019"
+       y="198.38019"
        id="text5404"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5406"
          x="445.71426"
-         y="258.38019">Bedroom 1</tspan></text>
+         y="198.38019">Bedroom 1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="171.42857"
-       y="651.23737"
+       x="174.28572"
+       y="594.09448"
        id="text5408"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5410"
-         x="171.42857"
-         y="651.23737">Study</tspan></text>
+         x="174.28572"
+         y="594.09448">Study</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 390,342.66591 -374.285714,0"
@@ -181,13 +181,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="752.89624"
-       y="257.5585"
+       x="751.46765"
+       y="194.70135"
        id="text5404-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5406-1"
-         x="752.89624"
-         y="257.5585">Bedroom 2</tspan></text>
+         x="751.46765"
+         y="194.70135">Bedroom 2</tspan></text>
   </g>
 </svg>

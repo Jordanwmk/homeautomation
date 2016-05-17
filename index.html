@@ -10,6 +10,8 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="js/imagemapster.js"></script>
+	<script src="js/resize.js"></script>
 </head>
 
 <body>
@@ -37,21 +39,21 @@
 
 <div class="row" style="margin-left:-15px; margin-right:auto;">
 
-		<div class="col-md-2" style="min-width:300px; max-width:300px;">
+		<div class="col-md-2 " style="min-width:300px; max-width:300px;">
 		
 			<div class="sidebar-container">
 				<ul class="sidebar">	
 				
 					<li>
-						<h2>Floor</h2>
+						<h2 onclick="showImage()">Floor</h2>
 					</li>
 				
 					<li>
-						<a class="popup" onclick="toggle(this)">1st Floor</a>
+						<a class="sidetoggle" onclick="toggle(this)">1st Floor</a>
 					</li>
 					
 					<li>
-						<a class="popup" onclick="toggle(this)">2nd Floor</a>
+						<a class="sidetoggle" onclick="toggle(this)">2nd Floor</a>
 					</li>
 				
 					<li>
@@ -59,15 +61,19 @@
 					</li>
 				
 					<li>
-						<a class="popup" onclick="toggle(this)">Lights</a>
+						<a class="sidetoggle" onclick="toggle(this)">Lights</a>
 					</li>
 					
 					<li>
-						<a class="popup" onclick="toggle(this)">Appliances</a>
+						<a class="sidetoggle" onclick="toggle(this)">Music</a>
 					</li>
 					
 					<li>
-						<a class="popup" onclick="toggle(this)">Temperature</a>
+						<a class="sidetoggle" onclick="toggle(this)">Appliances</a>
+					</li>
+					
+					<li>
+						<a class="sidetoggle" onclick="toggle(this)">Temperature</a>
 					</li>
 
 					<li>
@@ -75,15 +81,15 @@
 					</li>
 					
 					<li>
-						<a class="popup" onclick="toggle(this)">Video Survelliance</a>
+						<a class="sidetoggle" onclick="toggle(this)">Video Survelliance</a>
 					</li>
 					
 					<li>
-						<a class="popup" onclick="toggle(this)">Doors</a>
+						<a class="sidetoggle" onclick="toggle(this)">Doors</a>
 					</li>
 					
 					<li>
-						<a class="popup" onclick="toggle(this)">Windows</a>
+						<a class="sidetoggle" onclick="toggle(this)">Windows</a>
 					</li>	
 					
 				</ul>
@@ -92,8 +98,12 @@
 		</div>
 		
 		<div class="col-md-10" style="margin-left:300px;">
-			<img src="img/test.svg" class="img-responsive center-block">
+			<img id="floorplan" src="img/test.png" class="img-responsive floor-plan" usemap="#map" width="1053" height="745" >
 		</div>
+		
+		<map name="map">
+			<area room="living" href="#" shape="rect" coords="18,14,386,270" />
+		</map>
 
 
 	
@@ -104,6 +114,18 @@ function toggle(e){
 	$(e).toggleClass("toggled");
 }
 </script>
+
+<script>
+$('#floorplan').mapster({
+								fillColor: '0080ff',
+								fillOpacity: 0.3,
+								singleSelect: true,
+								scaleMap: true
+								})
+
+</script>
+
+
 
 </body>
 </html>

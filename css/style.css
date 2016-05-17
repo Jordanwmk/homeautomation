@@ -1,3 +1,7 @@
+body {
+	overflow-x:hidden;
+}
+
 .right-border {
 	padding-right: 183px;
 	border-right: solid black;
@@ -35,4 +39,7 @@
     line-height: 70px;
 }
 
-body    {overflow-x:hidden;}
+.floor-plan {
+	max-width:1053px;
+	max-height:745px;
+}
