@@ -1,131 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Bootstrap Case</title>
+	<title>XYZ</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="css/style.css" rel="stylesheet"/>
-	<link href="css/simple-sidebar.css" rel="stylesheet"/>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="js/imagemapster.js"></script>
-	<script src="js/resize.js"></script>
+
 </head>
 
 <body>
 
-<div class="navbar navbar-default no-margin sharp-border">
-	<div class="container-fluid">
-	
-		<div class="nav navbar-nav navbar-left right-border" style="height:70px">
-			<li><a class="navbar-brand" href="#">XYZ</a></li>
-		</div>
-		
-		<div class="nav navbar-nav">
-		</div>
-		
-		
-		<div class="nav navbar-nav navbar-right left-border">
-			<li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+<div class="container">
+
+	<div class="navbar navbar-inverse sharp-edge">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">XYZ Home Automation</a>
+			</div>
+
+			<div class="nav navbar-nav navbar-right">
+				<li><a><span class="glyphicon glyphicon-list"></span></a></li>
+			</div>
 		</div>
 	</div>
-</div>
-  
-
-
-
-
-<div class="row" style="margin-left:-15px; margin-right:auto;">
-
-		<div class="col-md-2 " style="min-width:300px; max-width:300px;">
-		
-			<div class="sidebar-container">
-				<ul class="sidebar">	
-				
-					<li>
-						<h2 onclick="showImage()">Floor</h2>
-					</li>
-				
-					<li>
-						<a class="sidetoggle" onclick="toggle(this)">1st Floor</a>
-					</li>
-					
-					<li>
-						<a class="sidetoggle" onclick="toggle(this)">2nd Floor</a>
-					</li>
-				
-					<li>
-						<h2>General</h2>
-					</li>
-				
-					<li>
-						<a class="sidetoggle" onclick="toggle(this)">Lights</a>
-					</li>
-					
-					<li>
-						<a class="sidetoggle" onclick="toggle(this)">Music</a>
-					</li>
-					
-					<li>
-						<a class="sidetoggle" onclick="toggle(this)">Appliances</a>
-					</li>
-					
-					<li>
-						<a class="sidetoggle" onclick="toggle(this)">Temperature</a>
-					</li>
-
-					<li>
-						<h2>Security</h2>
-					</li>
-					
-					<li>
-						<a class="sidetoggle" onclick="toggle(this)">Video Survelliance</a>
-					</li>
-					
-					<li>
-						<a class="sidetoggle" onclick="toggle(this)">Doors</a>
-					</li>
-					
-					<li>
-						<a class="sidetoggle" onclick="toggle(this)">Windows</a>
-					</li>	
-					
-				</ul>
+	
+	<div class="container-fluid page-border">
+	
+	
+	
+		<br>
+		<div class="row">
+			<div class="col-xs-4">
+				<button type="button" class="btn btn-success center-block">
+					<img src="img/light.png" class="img-responsive"/>
+					<h4> 4 Lights On </h4>
+				</button>
 			</div>
 			
+			<div class="col-xs-4">
+				<button type="button" class="btn btn-success center-block">
+					<img src="img/temperature.png" class="img-responsive"/>
+					<h4> Currently 28°C  </h4>
+				</button>
+			</div>
+			
+			<div class="col-xs-4">
+				<button type="button" class="btn btn-success center-block">
+					<img src="img/security.png" class="img-responsive"/>
+					<h4> All doors locked </h4>
+				</button>
+			</div>
 		</div>
-		
-		<div class="col-md-10" style="margin-left:300px;">
-			<img id="floorplan" src="img/test.png" class="img-responsive floor-plan" usemap="#map" width="1053" height="745" >
+		<br>
+		<div class="row">
+			<div class="col-xs-4">
+				<button type="button" class="btn btn-success center-block">
+					<img src="img/power.png" class="img-responsive"/>
+					<h4> Currently 1500kWh </h4>
+				</button>
+			</div>
+			
+			<div class="col-xs-4">
+				<button type="button" class="btn btn-success center-block">
+					<img src="img/music.png" class="img-responsive"/>
+					<h4> None active </h4>
+				</button>
+			</div>
+			
+			<div class="col-xs-4">
+				<button type="button" class="btn btn-success center-block">
+					<img src="img/app.png" class="img-responsive"/>
+					<h4> Oven is on </h4>
+				</button>
+			</div>
 		</div>
+		<br>
 		
-		<map name="map">
-			<area room="living" href="#" shape="rect" coords="18,14,386,270" />
-		</map>
-
-
+	</div>
 	
 </div>
 
-<script>
-function toggle(e){
-	$(e).toggleClass("toggled");
-}
-</script>
-
-<script>
-$('#floorplan').mapster({
-								fillColor: '0080ff',
-								fillOpacity: 0.3,
-								singleSelect: true,
-								scaleMap: true
-								})
-
-</script>
-
-
-
 </body>
+
 </html>
