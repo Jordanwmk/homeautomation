@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>XYZ</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="css/style.css" rel="stylesheet"/>
+	<link href="css/font-awesome.css" rel="stylesheet"/>
+	<link href="css/bootstrap-square.css" rel="stylesheet"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<div class="navbar navbar-inverse sharp-edge">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">XYZ Home Automation</a>
+			</div>
+
+			<div class="nav navbar-nav navbar-right">
+				<li><a><span class="glyphicon glyphicon-list"></span></a></li>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container-fluid page-border no-padding">
+	
+		<div class="row bottom-border" style="width:100%; margin-left:0px;">
+			<div class="col-xs-12">
+				<h2>Locks</h2>
+			</div>
+		</div>
+	
+		<div class="row">
+		
+			<div class="col-xs-3 right-border" style="padding-right:0px">
+				<div class="panel-group no-margin">
+				
+					<div class="panel panel-default">
+					
+						<div class="panel-heading" data-toggle="collapse" data-target="#collapseOne">
+							<h4 class="panel-title">
+								<a class="accordion-toggle">Doors</a>
+							</h4>
+						</div>
+						
+						<div id="collapseOne" class="panel-collapse collapse in">
+							<div class="list-group no-margin">
+								<a href="#" class="list-group-item">Back Door <i class="fa fa-unlock-alt fa-2x pull-right" aria-hidden="true"></i></a>	
+								<a href="#" class="list-group-item">Front Door <i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>													
+							</div>
+						</div>
+						
+					</div>
+					
+					<div class="panel panel-default" style="margin-top:0px;">
+					
+						<div class="panel-heading" data-toggle="collapse"data-target="#collapseTwo">
+							<h4 class="panel-title">
+								<a class="accordion-toggle">Windows</a>
+							</h4>
+						</div>
+						
+						<div id="collapseTwo" class="panel-collapse collapse in">
+							<div class="list-group no-margin">
+								<a href="#" class="list-group-item">Garage <i class="fa fa-lock fa-2x pull-right" aria-hidden="false"></i></a>
+								<a href="#" class="list-group-item">Living Room<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>
+								<a href="#" class="list-group-item">Kitchen<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>
+								<a href="#" class="list-group-item">Guest Room<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>
+								<a href="#" class="list-group-item">Master Bedroom<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>	
+								<a href="#" class="list-group-item">Tony's Bedroom<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>
+								<a href="#" class="list-group-item">Wanda's Bedroom<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>													
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="col-xs-9">
+			
+				<h2>Change Status</h2>
+			
+				<div class="row" style="padding-top:10px; padding-right:10px;">
+				
+					<div class="col-xs-6">
+						<button type="button" class="btn btn-primary center-block btn-block">Lock</button>
+					</div>
+					
+					<div class="col-xs-6">
+						<button type="button" class="btn btn-primary center-block btn-block disabled">Unlock</button>
+					</div>
+					
+				</div>
+				
+				<div class="separator"></div>
+				
+				<div class="row">
+					<div class="col-xs-12">
+					
+						<h2>Change PIN</h2>
+			
+							<div class="row" style="padding-top:10px;">
+							
+								<div class="col-xs-12">
+									<input type="text" class="form-control" id="light" style="width:25%;" placeholder="Current PIN">
+								</div>
+								
+							</div>
+							
+							<div class="row" style="padding-top:10px;">
+							
+								<div class="col-xs-12">
+									<input type="text" class="form-control" id="light" style="width:25%;" placeholder="New PIN" disabled>
+								</div>
+								
+							</div>
+							
+							<div class="row" style="padding-top:10px;">
+							
+								<div class="col-xs-12">
+									<button type="button" class="btn btn-primary">Change</button>
+									<button type="button" class="btn btn-primary">Cancel</button>
+								</div>
+
+							</div>
+						
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+
+	</div>
+	
+</div>
+
+</body>
+
+</html>
