@@ -40,21 +40,20 @@
 		
 			<div class="col-xs-3 right-border" style="padding-right:0px">
 				<div class="list-group no-margin">
-					<a href="#" class="list-group-item">Front Door</a>
-					<a href="#" class="list-group-item">Back Door</a>
-					<a href="#" class="list-group-item">Garage</a>
-					<a href="#" class="list-group-item">Living Room</a>
-					<a href="#" class="list-group-item">Guest Room</a>
-					<a href="#" class="list-group-item">Master Bedroom</a>
-					<a href="#" class="list-group-item">Tony's Bedroom</a>
-					<a href="#" class="list-group-item">Wanda's Bedroom</a>
+					<div class="list-group-item" id="img/front.jpg" onclick="changeImage(this)"> Front Door</div>
+					<div class="list-group-item" id="img/back.jpg" onclick="changeImage(this)">Back Door</div>
+					<div class="list-group-item" id="img/garage.jpg" onclick="changeImage(this)">Garage</div>
+					<div class="list-group-item" id="img/living.jpg" onclick="changeImage(this)">Living Room</div>
+					<div class="list-group-item" id="img/guest.jpg" onclick="changeImage(this)">Guest Room</div>
+					<div class="list-group-item" id="img/wife.jpg" onclick="changeImage(this)">Master Bedroom</div>
+					<div class="list-group-item" id="img/boy.jpg" onclick="changeImage(this)">Tony's Bedroom</div>
+					<div class="list-group-item" id="img/girl.jpg" onclick="changeImage(this)">Wanda's Bedroom</div>
 				</div>
 			</div>
 			
-			<div class="col-xs-9">
-			
-				<img src="img/wife.jpg" class="img-responsive center-block"/>
-				
+			<div class="col-xs-9" style="padding-left:0px">
+				<img id="videoFeed" class="img-responsive center-block"/>
+				<h2 id="pholder" class="text-center" style="padding-bottom:0px;">Please select an item from the list</h2>
 			</div>
 
 		</div>
@@ -62,6 +61,15 @@
 	</div>
 	
 </div>
+
+<script>
+function changeImage(e){
+	$("#pholder").hide();
+	$("#videoFeed").attr("src", e.id);
+	$(".list-group-item").removeClass("active-list");
+	$(e).addClass("active-list");
+}
+</script>
 
 </body>
 
