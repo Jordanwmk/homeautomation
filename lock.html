@@ -47,14 +47,14 @@
 					
 						<div class="panel-heading" data-toggle="collapse" data-target="#collapseOne">
 							<h4 class="panel-title">
-								<a class="accordion-toggle">Doors</a>
+								<div class="accordion-toggle">Doors</div>
 							</h4>
 						</div>
-						
+
 						<div id="collapseOne" class="panel-collapse collapse in">
 							<div class="list-group no-margin">
-								<a href="#" class="list-group-item">Back Door <i class="fa fa-unlock-alt fa-2x pull-right" aria-hidden="true"></i></a>	
-								<a href="#" class="list-group-item">Front Door <i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>													
+								<div onclick="loadDoorControl(this);" id="back" class="list-group-item active-list">Back Door <i class="fa fa-unlock-alt fa-2x pull-right" aria-hidden="true"></i></div>	
+								<div onclick="loadDoorControl(this);" id="front" class="list-group-item">Front Door <i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></div>													
 							</div>
 						</div>
 						
@@ -64,19 +64,19 @@
 					
 						<div class="panel-heading" data-toggle="collapse"data-target="#collapseTwo">
 							<h4 class="panel-title">
-								<a class="accordion-toggle">Windows</a>
+								<div class="accordion-toggle">Windows</div>
 							</h4>
 						</div>
 						
 						<div id="collapseTwo" class="panel-collapse collapse in">
 							<div class="list-group no-margin">
-								<a href="#" class="list-group-item">Garage <i class="fa fa-lock fa-2x pull-right" aria-hidden="false"></i></a>
-								<a href="#" class="list-group-item">Living Room<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>
-								<a href="#" class="list-group-item">Kitchen<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>
-								<a href="#" class="list-group-item">Guest Room<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>
-								<a href="#" class="list-group-item">Master Bedroom<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>	
-								<a href="#" class="list-group-item">Tony's Bedroom<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>
-								<a href="#" class="list-group-item">Wanda's Bedroom<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></a>													
+								<div href="#" class="list-group-item">Garage <i class="fa fa-lock fa-2x pull-right" aria-hidden="false"></i></div>
+								<div href="#" class="list-group-item">Living Room<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></div>
+								<div href="#" class="list-group-item">Kitchen<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></div>
+								<div href="#" class="list-group-item">Guest Room<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></div>
+								<div href="#" class="list-group-item">Master Bedroom<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></div>	
+								<div href="#" class="list-group-item">Tony's Bedroom<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></div>
+								<div href="#" class="list-group-item">Wanda's Bedroom<i class="fa fa-lock fa-2x pull-right" aria-hidden="true"></i></div>													
 							</div>
 						</div>
 						
@@ -85,7 +85,7 @@
 				</div>
 			</div>
 			
-			<div class="col-xs-9">
+			<div id="lockControl" class="col-xs-9">
 			
 				<h2>Change Status</h2>
 			
@@ -124,7 +124,7 @@
 								
 							</div>
 							
-							<div class="row" style="padding-top:10px;">
+							<div class="row" style="padding-top:10px; padding-bottom:10px;">
 							
 								<div class="col-xs-12">
 									<button type="button" class="btn btn-primary">Change</button>
@@ -143,6 +143,40 @@
 	</div>
 	
 </div>
+
+<script>
+var currentRoom = null;
+var currentControl = null;
+var counter = 0;
+
+function loadDoorControl(e){
+
+	if (counter == 0){
+		currentRoom = "back";
+	}
+
+	currentControl = JSON.stringify($("#lockControl").html());
+	localStorage[currentRoom] = currentControl;
+	
+	if (counter != 0){
+	
+		$(".list-group-item").removeClass("active-list");
+		$(e).addClass("active-list");
+	
+		currentRoom = e.id;
+
+		if (localStorage[currentRoom] != null && localStorage[currentRoom] != ""){ //load cached
+			currentControl = JSON.parse(localStorage[currentRoom]);
+			$("#lockControl").html(currentControl);	
+		} else {	//load new
+			$("#lockControl").load("http://homeauto.azurewebsites.net/doorControl.html");
+		}
+	}
+
+	counter++;
+	
+}
+</script>
 
 </body>
 
