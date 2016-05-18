@@ -81,7 +81,6 @@ function loadControl(e){
 	currentControl = JSON.stringify($("#lightControl").html());
 	localStorage[currentRoom] = currentControl;
 	custom = $("#light").value;
-	console.log($("#light").value);
 	currentRoom = e.id;
 	
 	if (localStorage[currentRoom] != null && localStorage[currentRoom] != ""){ //load cached

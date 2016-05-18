@@ -5,17 +5,17 @@
 		
 		<div class="row" style="padding-top:10px; padding-right:10px;">
 			<div class="col-xs-4">
-				<button type="button" class="btn btn-primary center-block btn-block active-button" onclick="lightOff()">Off</button>
+				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOff(this)">Off</button>
 				<h4 class="text-center"> 0% </h4>
 			</div>
 			
 			<div class="col-xs-4">
-				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn()">Dim</button>
+				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">Dim</button>
 				<h4 class="text-center"> 25% </h4>
 			</div>
 			
 			<div class="col-xs-4">
-				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn()">Eco</button>
+				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">Eco</button>
 				<h4 class="text-center"> 50% </h4>
 			</div>
 		</div>
@@ -23,17 +23,17 @@
 				
 		<div class="row" style="padding-top:10px; padding-right:10px;">
 			<div class="col-xs-4">
-				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn()">High</button>
+				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">High</button>
 				<h4 class="text-center"> 75% </h4>
 			</div>
 			
 			<div class="col-xs-4">
-				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn()">Max</button>
+				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">Max</button>
 				<h4 class="text-center"> 100% </h4>
 			</div>
 			
 			<div class="col-xs-4">
-				<button type="button" id="custom" class="btn btn-primary center-block btn-block disabled" onclick="lightOn()">Custom</button>
+				<button type="button" id="custom" class="btn btn-primary center-block btn-block disabled" onclick="lightOn(this)">Custom</button>
 				<input type="text" onkeyup="toggleButton(this)" class="form-control center-block" id="light" style="width:25%; text-align:right;" placeholder="%"></input>
 			</div>
 			
