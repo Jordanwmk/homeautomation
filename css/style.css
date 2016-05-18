@@ -58,8 +58,6 @@ body {
 	text-align:center;
 }
 
-
-
 .row [class*="col-"]{
   margin-bottom: -99999px;
   padding-bottom: 99999px;
@@ -69,7 +67,7 @@ body {
   overflow: hidden; 
 }
 
-.panel-heading {
+.list-group  {
     cursor: pointer;
 }
 
@@ -86,4 +84,8 @@ body {
 	-webkit-box-shadow: 0px 0px 20px 5px rgba(70,143,110,1);
 	-moz-box-shadow: 0px 0px 20px 5px rgba(70,143,110,1);
 	box-shadow: 0px 0px 20px 5px rgba(70,143,110,1);
+}
+
+.active-list {
+	background-color:blue;
 }
