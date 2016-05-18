@@ -70,8 +70,7 @@ function lightOff(e){
 	var temp = "#" + currentRoom + " > span.glyphicon-flash";
 	$(temp).removeClass("glyphicon-flash");
 	
-	
-	$(e).parent().parent().removeClass("active-button");
+	$(".btn-block").removeClass("active-button");
 	$(e).addClass("active-button");
 }
 
@@ -79,9 +78,7 @@ function lightOn(e){
 	var temp = "#" + currentRoom + " > span";
 	$(temp).addClass("glyphicon-flash");
 
-	var temp2 = $(e).parent().parent().parent().parent().removeClass("active-button");
-	
-	$(temp2).removeClass("active-button");
+	$(".btn-block").removeClass("active-button");
 	$(e).addClass("active-button");
 }
 
