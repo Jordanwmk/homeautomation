@@ -22,7 +22,7 @@
 			<div class="row" style="padding-top:10px;">
 			
 				<div class="col-xs-12">
-					<input type="text" class="form-control" id="light" style="width:25%;" placeholder="Current PIN">
+					<input type="text" onkeyup="toggleButton(this)" class="form-control" style="width:25%;" placeholder="Current PIN">
 				</div>
 				
 			</div>
@@ -30,7 +30,7 @@
 			<div class="row" style="padding-top:10px;">
 			
 				<div class="col-xs-12">
-					<input type="text" class="form-control" id="light" style="width:25%;" placeholder="New PIN" disabled>
+					<input type="text" id="newPin" class="form-control" style="width:25%;" placeholder="New PIN" disabled>
 				</div>
 				
 			</div>
@@ -38,8 +38,8 @@
 			<div class="row" style="padding-top:10px; padding-bottom:10px;">
 			
 				<div class="col-xs-12">
-					<button type="button" class="btn btn-primary">Change</button>
-					<button type="button" class="btn btn-primary">Cancel</button>
+					<button type="button" id="change" class="btn btn-primary disabled">Change</button>
+					<button type="button" id="cancel" class="btn btn-primary disabled">Cancel</button>
 				</div>
 
 			</div>

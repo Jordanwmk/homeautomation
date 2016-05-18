@@ -199,6 +199,19 @@ function loadDoorControl(e){
 	counter++;
 	
 }
+
+function toggleButton(e){
+	var temp = e.value;
+	
+	if (temp != null && temp != ""){
+		$('#change').removeClass("disabled");
+		$('#cancel').removeClass("disabled");
+	} else {
+		$('#change').addClass("disabled");
+		$('#cancel').addClass("disabled");
+	}
+
+}
 </script>
 
 </body>
