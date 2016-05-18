@@ -53,7 +53,106 @@
 				</div>
 			</div>
 			
-			<div id="lightControl" class="col-xs-9"></div>
+			<div id="lightControl" class="col-xs-9">
+			
+				<div id="btnMaster" class="row">
+					<div class="col-xs-12 ">
+						
+						<h2>Intensity</h2>
+						
+						<div class="row" style="padding-top:10px; padding-right:10px;">
+							<div class="col-xs-4">
+								<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOff(this)">Off</button>
+								<h4 class="text-center"> 0% </h4>
+							</div>
+							
+							<div class="col-xs-4">
+								<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">Dim</button>
+								<h4 class="text-center"> 25% </h4>
+							</div>
+							
+							<div class="col-xs-4">
+								<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">Eco</button>
+								<h4 class="text-center"> 50% </h4>
+							</div>
+						</div>
+						
+								
+						<div class="row" style="padding-top:10px; padding-right:10px;">
+							<div class="col-xs-4">
+								<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">High</button>
+								<h4 class="text-center"> 75% </h4>
+							</div>
+							
+							<div class="col-xs-4">
+								<button type="button" class="btn btn-primary center-block btn-block active-button" onclick="lightOn(this)">Max</button>
+								<h4 class="text-center"> 100% </h4>
+							</div>
+							
+							<div class="col-xs-4">
+								<button type="button" id="custom" class="btn btn-primary center-block btn-block disabled" onclick="lightOn(this)">Custom</button>
+								<input type="text" onkeyup="toggleButton(this)" class="form-control center-block" id="light" style="width:25%; text-align:right;" placeholder="%"></input>
+							</div>
+							
+						</div>
+						
+					</div>
+				</div>
+
+				<div class="separator"></div>
+
+				<div class="row">
+					<div class="col-xs-12">
+					
+						<h2>
+							Timer
+							<button type="button" style="margin-right:10px;" onclick="toggleTime()" id="timeToggle" class="btn btn-primary pull-right" data-toggle="collapse" data-target="#timer">On</button>
+						</h2>
+						
+						<div id="timer" class="collapse">
+							
+							<div class="row" style="padding-top:10px; padding-right:10px;">
+								<div class="col-xs-4">
+									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">5 min</button>
+								</div>
+								
+								<div class="col-xs-4">
+									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">15 min</button>
+								</div>
+								
+								<div class="col-xs-4">
+									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">30 min</button>
+								</div>
+							</div>
+							
+									
+							<div class="row" style="padding-top:10px; padding-right:10px; padding-bottom:10px;">
+								<div class="col-xs-4">
+									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">1 hr</button>
+								</div>
+								
+								<div class="col-xs-4">
+									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">2 hr</button>
+								</div>
+								
+								<div class="col-xs-4">
+									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">3 hr</button>
+								</div>
+								
+							</div>
+							
+							<div class="row" id="cfmTime" style="padding-top:10px; padding-right:10px; padding-bottom:15px; display:none;">
+								<div class="col-xs-12">
+									<h3 class="text-center">Timer Set! <span class="glyphicon glyphicon-ok" style="color:green"></span></h3>
+								</div>			
+							</div>
+							
+						</div>	
+						
+					</div>
+				</div>
+							
+			</div>
 
 		</div>
 
@@ -64,7 +163,13 @@
 <script>
 var currentRoom = null;
 var currentControl = null;
-var custom;
+var counter = 0;
+
+$(document).ready(function(){
+	localStorage.clear(); //remove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    loadControl();
+	$("#cfmTime").hide();
+});
 
 function lightOff(e){
 	var temp = "#" + currentRoom + " > span.glyphicon-flash";
@@ -84,20 +189,30 @@ function lightOn(e){
 
 function loadControl(e){
 
+	if (counter == 0){
+		currentRoom = "kitchen";
+	}
+
 	currentControl = JSON.stringify($("#lightControl").html());
 	localStorage[currentRoom] = currentControl;
-	custom = $("#light").value;
-	currentRoom = e.id;
 	
-	if (localStorage[currentRoom] != null && localStorage[currentRoom] != ""){ //load cached
-		currentControl = JSON.parse(localStorage[currentRoom]);
-		$("#lightControl").html(currentControl);
-		$("#light").value = custom;
-		
-	} else {	//load new
-		$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
+	if (counter != 0){
+		currentRoom = e.id;
+		console.log(currentRoom);
+		if (localStorage[currentRoom] != null && localStorage[currentRoom] != ""){ //load cached
+			currentControl = JSON.parse(localStorage[currentRoom]);
+			$("#lightControl").html(currentControl);	
+		} else {	//load new
+			$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
+		}
 	}
+
+	counter++;
 	
+}
+
+function loadWrapper(){
+	$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
 }
 
 function toggleButton(e){
@@ -116,6 +231,21 @@ function disableButton(){
 	
 	if (!temp){
 		$('#custom').addClass("disabled");
+	}
+}
+
+function cfmTime(){
+	$("#cfmTime").show();
+}
+
+function toggleTime(){
+	var currentText = $("#timeToggle").text();
+	
+	if (currentText == "On"){
+		$("#timeToggle").text("Off");
+	} else {
+		$("#timeToggle").text("On");
+		$("#cfmTime").hide();
 	}
 }
 </script>
