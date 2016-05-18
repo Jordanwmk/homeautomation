@@ -92,11 +92,11 @@
 				<div class="row" style="padding-top:10px; padding-right:10px;">
 				
 					<div class="col-xs-6">
-						<button type="button" class="btn btn-primary center-block btn-block">Lock</button>
+						<button type="button" id="lockBtn" class="btn btn-primary center-block btn-block" onclick="lock(this)">Lock</button>
 					</div>
 					
 					<div class="col-xs-6">
-						<button type="button" class="btn btn-primary center-block btn-block disabled">Unlock</button>
+						<button type="button" id="unlockBtn" class="btn btn-primary center-block btn-block disabled" onclick="unlock(this)">Unlock</button>
 					</div>
 					
 				</div>
@@ -151,11 +151,11 @@ var counter = 0;
 
 $(document).ready(function(){
 	localStorage.clear(); //remove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    loadControl();
+    loadDoorControl();
 });
 
 function lock(e){
-	var temp = "#" + currentRoom + " > i.fa-unlock-alt ";
+	var temp = "#" + currentRoom + " > i";
 	$(temp).removeClass("fa-unlock-alt");
 	$(temp).addClass("fa-lock");
 	
@@ -164,7 +164,7 @@ function lock(e){
 }
 
 function unlock(e){
-	var temp = "#" + currentRoom + " > span";
+	var temp = "#" + currentRoom + " > i";
 	$(temp).removeClass("fa-lock");
 	$(temp).addClass("fa-unlock-alt");
 
