@@ -79,8 +79,8 @@ function loadControl(e){
 	$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
 }
 
-function toggleButton(){
-	var temp = this.value;
+function toggleButton(e){
+	var temp = e.value;
 	console.log(temp);
 	
 	if (!temp){
