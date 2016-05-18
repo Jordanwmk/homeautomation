@@ -81,3 +81,9 @@ body {
     border-width: 1px;
 	border-color: #DCDCDC;
 }
+
+.active-button {
+	-webkit-box-shadow: 0px 0px 20px 8px rgba(70,143,110,1);
+	-moz-box-shadow: 0px 0px 20px 8px rgba(70,143,110,1);
+	box-shadow: 0px 0px 20px 8px rgba(70,143,110,1);
+}

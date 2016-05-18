@@ -62,7 +62,9 @@
 </div>
 
 <script>
-var currentRoom;
+var currentRoom = null;
+var currentControl = null;
+var custom;
 
 function lightOff(){
 	var temp = "#" + currentRoom + " > span.glyphicon-flash";
@@ -75,20 +77,31 @@ function lightOn(){
 }
 
 function loadControl(e){
+
+	currentControl = JSON.stringify($("#lightControl").html());
+	localStorage[currentRoom] = currentControl;
+	custom = $("#light").value;
+	console.log($("#light").value);
 	currentRoom = e.id;
-	$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
+	
+	if (localStorage[currentRoom] != null && localStorage[currentRoom] != ""){ //load cached
+		currentControl = JSON.parse(localStorage[currentRoom]);
+		$("#lightControl").html(currentControl);
+		$("#light").value = custom;
+		
+	} else {	//load new
+		$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
+	}
+	
 }
 
 function toggleButton(e){
 	var temp = e.value;
-	console.log(temp);
 	
-	if (!temp){
-		$('#custom').addClass("disabled");
-		console.log('1');
-	} else {
+	if (temp != null && temp != ""){
 		$('#custom').removeClass("disabled");
-		console.log('2');
+	} else {
+		$('#custom').addClass("disabled");
 	}
 
 }
