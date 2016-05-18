@@ -41,25 +41,19 @@
 		
 			<div class="col-xs-3 right-border" style="padding-right:0px">
 				<div class="list-group no-margin">
-					<a href="javascript:loadControl();" id="lightOn" class="list-group-item">Kitchen <span class="glyphicon glyphicon-flash pull-right" style="font-size:20px"></span></a>
-					<a href="#" class="list-group-item">Dining Room</a>
-					<a href="#" class="list-group-item">Study Room</a>
-					<a href="#" class="list-group-item">Garage</a>
-					<a href="#" class="list-group-item">Living Room</a>
-					<a href="#" class="list-group-item">Guest Room</a>
-					<a href="#" class="list-group-item">Master Bedroom</a>
-					<a href="#" class="list-group-item">Tony's Bedroom</a>
-					<a href="#" class="list-group-item">Wanda's Bedroom</a>
+					<div onclick="loadControl(this);" id="kitchen" class="list-group-item">Kitchen <span class="glyphicon glyphicon-flash pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="dining" class="list-group-item">Dining Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="study" class="list-group-item">Study Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="garage" class="list-group-item">Garage <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="living" class="list-group-item">Living Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="guest" class="list-group-item">Guest Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="master" class="list-group-item">Master Bedroom <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="tony" class="list-group-item">Tony's Bedroom <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="wanda" class="list-group-item">Wanda's Bedroom <span class="glyphicon pull-right" style="font-size:20px"></span></div>
 				</div>
 			</div>
 			
-			
-			
-			<div id="lightControl" class="col-xs-9">
-			
-				
-				
-			</div>
+			<div id="lightControl" class="col-xs-9"></div>
 
 		</div>
 
@@ -68,19 +62,24 @@
 </div>
 
 <script>
+var currentRoom;
 
 function lightOff(){
-	$("#lightOn > span.glyphicon-flash").removeClass("glyphicon-flash");
-	console.log('h');
+	var temp = "#" + currentRoom + " > span.glyphicon-flash";
+	$(temp).removeClass("glyphicon-flash");
+	console.log(temp);
 }
 
 function lightOn(){
-	$("#lightOn > span").addClass("glyphicon-flash");
-	console.log('h2');
+	var temp = "#" + currentRoom + " > span";
+	$(temp).addClass("glyphicon-flash");
+	console.log(temp);
 }
 
-function loadControl(){
-	$("#lightControl").load("lightControl.html");
+function loadControl(e){
+	currentRoom = e.id;
+	$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
+	console.log(currentRoom);
 }
 
 </script>
