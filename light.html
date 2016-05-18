@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="css/style.css" rel="stylesheet"/>
+	<link href="css/bootstrap-square.css" rel="stylesheet"/>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -40,7 +41,7 @@
 		
 			<div class="col-xs-3 right-border" style="padding-right:0px">
 				<div class="list-group no-margin">
-					<a href="#" class="list-group-item">Kitchen <span class="glyphicon glyphicon-flash pull-right" style="font-size:20px"></span></a>
+					<a href="javascript:loadControl();" id="lightOn" class="list-group-item">Kitchen <span class="glyphicon glyphicon-flash pull-right" style="font-size:20px"></span></a>
 					<a href="#" class="list-group-item">Dining Room</a>
 					<a href="#" class="list-group-item">Study Room</a>
 					<a href="#" class="list-group-item">Garage</a>
@@ -52,104 +53,11 @@
 				</div>
 			</div>
 			
-			<div class="col-xs-9">
 			
-				<div class="row ">
-					<div class="col-xs-12 ">
-						
-						<h2>Intensity</h2>
-						
-						<div class="row" style="padding-top:10px; padding-right:10px;">
-							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block">Off</button>
-								<h4 class="text-center"> 0% </h4>
-							</div>
-							
-							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block">Dim</button>
-								<h4 class="text-center"> 25% </h4>
-							</div>
-							
-							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block">Eco</button>
-								<h4 class="text-center"> 50% </h4>
-							</div>
-						</div>
-						
-								
-						<div class="row" style="padding-top:10px; padding-right:10px;">
-							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block">High</button>
-								<h4 class="text-center"> 75% </h4>
-							</div>
-							
-							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block">Max</button>
-								<h4 class="text-center"> 100% </h4>
-							</div>
-							
-							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block disabled">Custom</button>
-								<input type="text" class="form-control center-block" id="light" style="width:25%; text-align:right;" placeholder="%">
-							</div>
-							
-						</div>
-						
-					</div>
-				</div>
+			
+			<div id="lightControl" class="col-xs-9">
+			
 				
-				<div class="separator"></div>
-				
-				<div class="row">
-					<div class="col-xs-12">
-					
-						<h2>
-							Timer
-							<button type="button" style="margin-right:10px;" class="btn btn-primary pull-right" data-toggle="collapse" data-target="#timer">On</button>
-						</h2>
-						
-						<div id="timer" class="collapse">
-							
-							<div class="row" style="padding-top:10px; padding-right:10px;">
-								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block">5 min</button>
-								</div>
-								
-								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block">15 min</button>
-								</div>
-								
-								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block">30 min</button>
-								</div>
-							</div>
-							
-									
-							<div class="row" style="padding-top:10px; padding-right:10px; ">
-								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block">1 hr</button>
-								</div>
-								
-								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block">2 hr</button>
-								</div>
-								
-								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block">3 hr</button>
-								</div>
-								
-							</div>
-							
-							<div class="row" style="padding-top:10px; padding-right:10px; padding-bottom:15px;">
-								<div class="col-xs-12">
-									<h3 class="text-center">Timer Set! <span class="glyphicon glyphicon-ok" style="color:green"></span></h3>
-								</div>			
-							</div>
-							
-						</div>	
-						
-					</div>
-				</div>
 				
 			</div>
 
@@ -158,6 +66,24 @@
 	</div>
 	
 </div>
+
+<script>
+
+function lightOff(){
+	$("#lightOn > span.glyphicon-flash").removeClass("glyphicon-flash");
+	console.log('h');
+}
+
+function lightOn(){
+	$("#lightOn > span").addClass("glyphicon-flash");
+	console.log('h2');
+}
+
+function loadControl(){
+	$("#lightControl").load("lightControl.html");
+}
+
+</script>
 
 </body>
 
