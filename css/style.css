@@ -89,3 +89,7 @@ body {
 .active-list {
 	background-color:blue;
 }
+
+.btn.disabled, .btn[disabled] {
+	cursor: default;
+}
