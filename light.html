@@ -82,8 +82,17 @@ function loadControl(e){
 	console.log(currentRoom);
 }
 
-function enableButton(){
+function toggleButton(){
+	var temp = this.value;
 	$('#custom').removeClass("disabled");
+}
+
+function disableButton(){
+	var temp = this.value;
+	
+	if (!temp){
+		$('#custom').addClass("disabled");
+	}
 }
 </script>
 
