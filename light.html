@@ -66,14 +66,23 @@ var currentRoom = null;
 var currentControl = null;
 var custom;
 
-function lightOff(){
+function lightOff(e){
 	var temp = "#" + currentRoom + " > span.glyphicon-flash";
 	$(temp).removeClass("glyphicon-flash");
+	
+	
+	$(e).parent().parent().removeClass("active-button");
+	$(e).addClass("active-button");
 }
 
-function lightOn(){
+function lightOn(e){
 	var temp = "#" + currentRoom + " > span";
 	$(temp).addClass("glyphicon-flash");
+
+	var temp2 = $(e).parent().parent().parent().parent().removeClass("active-button");
+	
+	$(temp2).removeClass("active-button");
+	$(e).addClass("active-button");
 }
 
 function loadControl(e){
