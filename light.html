@@ -218,25 +218,6 @@ function loadWrapper(){
 	$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
 }
 
-function toggleButton(e){
-	var temp = e.value;
-	
-	if (temp != null && temp != ""){
-		$('#custom').removeClass("disabled");
-	} else {
-		$('#custom').addClass("disabled");
-	}
-
-}
-
-function disableButton(){
-	var temp = this.value;
-	
-	if (!temp){
-		$('#custom').addClass("disabled");
-	}
-}
-
 function cfmTime(){
 	$("#cfmTime").show();
 }
