@@ -149,6 +149,29 @@ var currentRoom = null;
 var currentControl = null;
 var counter = 0;
 
+$(document).ready(function(){
+	localStorage.clear(); //remove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    loadControl();
+});
+
+function lock(e){
+	var temp = "#" + currentRoom + " > i.fa-unlock-alt ";
+	$(temp).removeClass("fa-unlock-alt");
+	$(temp).addClass("fa-lock");
+	
+	$("#lockBtn").addClass("disabled");
+	$("#unlockBtn").removeClass("disabled");
+}
+
+function unlock(e){
+	var temp = "#" + currentRoom + " > span";
+	$(temp).removeClass("fa-lock");
+	$(temp).addClass("fa-unlock-alt");
+
+	$("#lockBtn").removeClass("disabled");
+	$("#unlockBtn").addClass("disabled");
+}
+
 function loadDoorControl(e){
 
 	if (counter == 0){
