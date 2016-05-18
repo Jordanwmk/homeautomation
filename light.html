@@ -85,13 +85,12 @@
 							</div>
 							
 							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block active-button" onclick="lightOn(this)">Max</button>
+								<button type="button" class="btn btn-primary center-block btn-block disabled" onclick="lightOn(this)">Max</button>
 								<h4 class="text-center"> 100% </h4>
 							</div>
 							
 							<div class="col-xs-4">
-								<button type="button" id="custom" class="btn btn-primary center-block btn-block disabled" onclick="lightOn(this)">Custom</button>
-								<input type="text" onkeyup="toggleButton(this)" class="form-control center-block" id="light" style="width:25%; text-align:right;" placeholder="%"></input>
+
 							</div>
 							
 						</div>
@@ -175,16 +174,16 @@ function lightOff(e){
 	var temp = "#" + currentRoom + " > span.glyphicon-flash";
 	$(temp).removeClass("glyphicon-flash");
 	
-	$(".btn-block").removeClass("active-button");
-	$(e).addClass("active-button");
+	$(".btn-block").removeClass("disabled");
+	$(e).addClass("disabled");
 }
 
 function lightOn(e){
 	var temp = "#" + currentRoom + " > span";
 	$(temp).addClass("glyphicon-flash");
 
-	$(".btn-block").removeClass("active-button");
-	$(e).addClass("active-button");
+	$(".btn-block").removeClass("disabled");
+	$(e).addClass("disabled");
 }
 
 function loadControl(e){
