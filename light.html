@@ -67,24 +67,30 @@ var currentRoom;
 function lightOff(){
 	var temp = "#" + currentRoom + " > span.glyphicon-flash";
 	$(temp).removeClass("glyphicon-flash");
-	console.log(temp);
 }
 
 function lightOn(){
 	var temp = "#" + currentRoom + " > span";
 	$(temp).addClass("glyphicon-flash");
-	console.log(temp);
 }
 
 function loadControl(e){
 	currentRoom = e.id;
 	$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
-	console.log(currentRoom);
 }
 
 function toggleButton(){
 	var temp = this.value;
-	$('#custom').removeClass("disabled");
+	console.log(temp);
+	
+	if (!temp){
+		$('#custom').addClass("disabled");
+		console.log('1');
+	} else {
+		$('#custom').removeClass("disabled");
+		console.log('2');
+	}
+
 }
 
 function disableButton(){
