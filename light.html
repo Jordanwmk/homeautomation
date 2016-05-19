@@ -162,6 +162,7 @@
 <script>
 var currentRoom = null;
 var currentControl = null;
+var currentList = null;
 //var counter = 0;
 
 
@@ -202,7 +203,18 @@ function lightOn(e){
 }
 
 function loadList(){
-	$("#lightList").load("http://homeauto.azurewebsites.net/lightList.html");
+	
+	if ((sessionStorage.getItem("lightList") != null) && (sessionStorage.getItem("lightList") != "")){
+		currentList = JSON.parse(sessionStorage.getItem("lightList"));
+		$("#lightList").html(currentList);
+	} else {
+		$("#lightList").load("http://homeauto.azurewebsites.net/lightList.html");
+	}
+	
+	window.onbeforeunload = function() {
+		currentList = JSON.stringify($("#lightList").html());	
+		sessionStorage.setItem("lightList", currentList);
+	}
 }
 
 function loadControl(e){	
