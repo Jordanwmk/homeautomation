@@ -62,7 +62,7 @@
 						
 						<div class="row" style="padding-top:10px; padding-right:10px;">
 							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOff(this)">Off</button>
+								<button type="button" id="btn-off" class="btn btn-primary center-block btn-block " onclick="lightOff(this)">Off</button>
 								<h4 class="text-center"> 0% </h4>
 							</div>
 							
@@ -193,8 +193,8 @@ function loadControl(e){
 	}
 
 	currentControl = JSON.stringify($("#lightControl").html());
-	//sessionStorage.setItem(currentRoom, currentControl);
-	localStorage[currentRoom] = currentControl;
+	sessionStorage.setItem(currentRoom, currentControl);
+	//localStorage[currentRoom] = currentControl;
 	
 	if (counter != 0){
 	
@@ -203,19 +203,28 @@ function loadControl(e){
 	
 		currentRoom = e.id;
 
-		if (localStorage[currentRoom] != null && localStorage[currentRoom] != ""){ //load cached
+		/*if (localStorage[currentRoom] != null && localStorage[currentRoom] != ""){ //load cached
 			currentControl = JSON.parse(localStorage[currentRoom]);
+			$("#lightControl").html(currentControl);	
+		} else {	//load new
+			$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
+		}*/
+		
+		if ((sessionStorage.getItem(currentRoom) != null) && (sessionStorage.getItem(currentRoom) != "")){ //load cached
+			currentControl = JSON.parse(sessionStorage.getItem(currentRoom));
 			$("#lightControl").html(currentControl);	
 		} else {	//load new
 			$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
 		}
 		
-		/*if (sessionStorage.getItem(currentRoom) != null && sessionStorage.getItem(currentRoom) != ""){ //load cached
-			currentControl = JSON.parse(sessionStorage.getItem(currentRoom));
-			$("#lightControl").html(currentControl);	
-		} else {	//load new
-			$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
-		}*/
+		if ($("#btn-off").hasClass('disabled')){
+			var temp = "#" + currentRoom + " > span.glyphicon-flash";
+			$(temp).removeClass("glyphicon-flash");
+		} else {
+			var temp = "#" + currentRoom + " > span";
+			$(temp).addClass("glyphicon-flash");
+		}
+
 	}
 
 	counter++;
