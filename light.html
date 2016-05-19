@@ -165,7 +165,7 @@ var currentControl = null;
 var counter = 0;
 
 $(document).ready(function(){
-	localStorage.clear(); //remove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	//localStorage.clear(); //remove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     loadControl();
 	$("#cfmTime").hide();
 });
@@ -193,8 +193,8 @@ function loadControl(e){
 	}
 
 	currentControl = JSON.stringify($("#lightControl").html());
-	sessionStorage.setItem(currentRoom, currentControl);
-	//localStorage[currentRoom] = currentControl;
+	//sessionStorage.setItem(currentRoom, currentControl);
+	localStorage[currentRoom] = currentControl;
 	
 	if (counter != 0){
 	
@@ -203,19 +203,19 @@ function loadControl(e){
 	
 		currentRoom = e.id;
 
-		/*if (localStorage[currentRoom] != null && localStorage[currentRoom] != ""){ //load cached
+		if (localStorage[currentRoom] != null && localStorage[currentRoom] != ""){ //load cached
 			currentControl = JSON.parse(localStorage[currentRoom]);
 			$("#lightControl").html(currentControl);	
 		} else {	//load new
 			$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
-		}*/
+		}
 		
-		if (sessionStorage.getItem(currentRoom) != null && sessionStorage.getItem(currentRoom) != ""){ //load cached
+		/*if (sessionStorage.getItem(currentRoom) != null && sessionStorage.getItem(currentRoom) != ""){ //load cached
 			currentControl = JSON.parse(sessionStorage.getItem(currentRoom));
 			$("#lightControl").html(currentControl);	
 		} else {	//load new
 			$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
-		}
+		}*/
 	}
 
 	counter++;
