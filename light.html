@@ -105,7 +105,7 @@
 					
 						<h2>
 							Timer
-							<button type="button" style="margin-right:10px;" onclick="toggleTime()" class="btn btn-primary pull-right timeToggle" data-toggle="collapse" data-target="#timer">On</button>
+							<button type="button" style="margin-right:10px;" onclick="toggleTime(this)" class="btn btn-primary pull-right" data-toggle="collapse" data-target="#timer">On</button>
 						</h2>
 						
 						<div id="timer" class="collapse">
@@ -230,16 +230,15 @@ function cfmTime(){
 	$("#cfmTime").show();
 }
 
-function toggleTime(){
-	var currentText = $(".timeToggle").text();
-	console.log(currentText);
+function toggleTime(e){
+	var currentText = $(e).text();
+	console.log(e);
+	console.log("currently" + currentText);
 	if (currentText == "On"){
-		$(".timeToggle").text("Off");
-		console.log('off');
+		$(e).text("Off");
 	} else {
-		$(".timeToggle").text("On");
+		$(e).text("On");
 		$("#cfmTime").hide();
-		console.log('on');
 	}
 }
 </script>
