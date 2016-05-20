@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="css/style.css" rel="stylesheet"/>
+	<link href="css/font-awesome.css" rel="stylesheet"/>
 	<link href="css/bootstrap-square.css" rel="stylesheet"/>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -17,67 +18,63 @@
 
 <div class="container">
 
-	<div class="navbar navbar-inverse sharp-edge">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">XYZ Home Automation</a>
+	<div class="container-fluid page-border no-padding">
+
+		<div class="row no-margin navbar-colour" style="min-height:80px;">
+		
+			<div class="col-xs-1" style="min-width:80px; min-height:70px;">
+				<img class="img-responsive pull-left pointable" onclick="window.location.href='index.html'" src="img/logo.png" style="margin-top:6px; min-width:70px; min-height:70px;"/>
+			</div>
+			
+			<div class="col-xs-10 no-padding">
+				<h2 class="navbar-brand pointable" style="padding-left:0px; font-size:29px;" >Main Menu</h2>
+			</div>
+			
+			<div class="col-xs-1 no-padding" style="padding-right:20px">
+				<div class="menu-options" style="height:80px;">
+					<i class="fa fa-bars fa-3x pull-right pointable" style="text-align: center; color:white;" aria-hidden="true"></i>
+				</div>
 			</div>
 
-			<div class="nav navbar-nav navbar-right">
-				<li><a><span class="glyphicon glyphicon-list"></span></a></li>
-			</div>
 		</div>
+		
 	</div>
+
+	<div class="container-fluid" style="height:50px;">
 	
-	<div class="container-fluid page-border">
-	
-	
-	
-		<br>
-		<div class="row">
-			<div class="col-xs-4">
-				<button type="button" class="btn btn-success center-block" onclick="window.location.href='light.html'">
-					<img src="img/light.png" class="img-responsive"/>
-					<h4>Lights</h4>
-				</button>
+
+		<div class="row btnColour container-border top-border" >
+			<div class="col-xs-4 pointable btnColour btnBorder" style="padding-top:10px; border-top:0px; border-left:0px;" onclick="window.location.href='light.html'">
+					<img src="img/light.png" class="img-responsive center-block" style="padding-top:20px;"/>
+					<h3 class="text-center">Lights</h3>
 			</div>
 			
-			<div class="col-xs-4">
-				<button type="button" class="btn btn-success center-block">
-					<img src="img/temperature.png" class="img-responsive"/>
-					<h4>Temperature</h4>
-				</button>
+			<div class="col-xs-4 pointable btnColour btnBorder" style="padding-top:10px; border-top:0px; border-left:0px;">
+					<img src="img/temperature.png" class="img-responsive center-block" style="padding-top:20px;"/>
+					<h3 class="text-center">Temperature</h3>
 			</div>
 			
-			<div class="col-xs-4">
-				<button type="button" class="btn btn-success center-block">
-					<img src="img/power.png" class="img-responsive"/>
-					<h4>Power</h4>
-				</button>
+			<div class="col-xs-4 pointable btnColour btnBorder" style="padding-top:10px; border-top:0px; border-left:0px; border-right:0px;">
+					<img src="img/power.png" class="img-responsive center-block" style="padding-top:20px;"/>
+					<h3 class="text-center">Power</h3>
 			</div>
 			
 		</div>
-		<br>
-		<div class="row">
-			<div class="col-xs-4">
-				<button type="button" class="btn btn-success center-block" onclick="window.location.href='lock.html'">
-					<img src="img/lock.png" class="img-responsive"/>
-					<h4>Locks</h4>
-				</button>
+
+		<div class="row btnColour container-border">
+			<div class="col-xs-4 pointable btnColour btnBorder" style="padding-top:10px; border-bottom:0px; border-left:0px;" onclick="window.location.href='lock.html'">
+					<img src="img/lock.png" class="img-responsive center-block" style="padding-top:20px;"/>
+					<h3 class="text-center">Locks</h3>
 			</div>		
 			
-			<div class="col-xs-4">
-				<button type="button" class="btn btn-success center-block" onclick="window.location.href='camera.html'">
-					<img src="img/camera.png" class="img-responsive"/>
-					<h4>Video Surveillance</h4>
-				</button>
+			<div class="col-xs-4 pointable btnColour btnBorder" style="padding-top:10px; border-bottom:0px; border-left:0px;" onclick="window.location.href='camera.html'">
+					<img src="img/camera.png" class="img-responsive center-block" style="padding-top:20px;"/>
+					<h3 class="text-center">Video Surveillance</h3>
 			</div>
 			
-			<div class="col-xs-4">
-				<button type="button" class="btn btn-success center-block">
-					<img src="img/app.png" class="img-responsive"/>
-					<h4>Appliances</h4>
-				</button>
+			<div class="col-xs-4 pointable btnColour btnBorder" style="padding-top:10px; border-bottom:0px; border-left:0px; border-right:0px;">
+					<img src="img/app.png" class="img-responsive center-block" style="padding-top:20px;"/>
+					<h3 class="text-center">Appliances</h3>
 			</div>
 		</div>
 		<br>

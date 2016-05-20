@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="css/style.css" rel="stylesheet"/>
+	<link href="css/font-awesome.css" rel="stylesheet"/>
 	<link href="css/bootstrap-square.css" rel="stylesheet"/>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -17,43 +18,47 @@
 
 <div class="container">
 
-	<div class="navbar navbar-inverse sharp-edge">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="index.html">XYZ Home Automation</a>
+	<div class="container-fluid page-border no-padding">
+
+		<div class="row no-margin navbar-colour" style="min-height:80px;">
+		
+			<div class="col-xs-1" style="min-width:80px; min-height:70px;">
+				<img class="img-responsive pull-left pointable" onclick="window.location.href='index.html'" src="img/logo.png" style="margin-top:6px; min-width:70px; min-height:70px;"/>
+			</div>
+			
+			<div class="col-xs-10 no-padding">
+				<h2 class="navbar-brand pointable" style="padding-left:0px; font-size:29px;" onclick="window.location.href='index.html'" >Main Menu ></h2>
+				<h2 class="navbar-brand pointable-default" style="padding-left:0px; font-size:29px;">Lights</h2>
+			</div>
+			
+			<div class="col-xs-1 no-padding" style="padding-right:20px">
+				<div class="menu-options" style="height:80px;">
+					<i class="fa fa-bars fa-3x pull-right pointable" style="text-align: center; color:white;" aria-hidden="true"></i>
+				</div>
 			</div>
 
-			<div class="nav navbar-nav navbar-right">
-				<li><a><span class="glyphicon glyphicon-list"></span></a></li>
-			</div>
 		</div>
+		
 	</div>
 	
 	<div class="container-fluid page-border no-padding">
 	
-		<div class="row bottom-border" style="width:100%; margin-left:0px;">
-			<div class="col-xs-12">
-				<h2>Lights <a href="index.html" style="color:green"><span class="glyphicon glyphicon-home pull-right" style="font-size:30px"></span></a></h2>
-			</div>
-		</div>
-	
-		<div class="row">
+		<div class="row" style="padding-left:15px; padding-right:15px;">
 		
-			<div id="lightList" class="col-xs-3 right-border" style="padding-right:0px">
-				<div class="list-group no-margin">
-					<div onclick="loadControl(this);" id="kitchen" class="list-group-item active-list">Kitchen <span class="glyphicon glyphicon-flash pull-right" style="font-size:20px"></span></div>
-					<div onclick="loadControl(this);" id="dining" class="list-group-item">Dining Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
-					<div onclick="loadControl(this);" id="study" class="list-group-item">Study Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
-					<div onclick="loadControl(this);" id="garage" class="list-group-item">Garage <span class="glyphicon pull-right" style="font-size:20px"></span></div>
-					<div onclick="loadControl(this);" id="living" class="list-group-item">Living Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
-					<div onclick="loadControl(this);" id="guest" class="list-group-item">Guest Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
-					<div onclick="loadControl(this);" id="master" class="list-group-item">Master Bedroom <span class="glyphicon pull-right" style="font-size:20px"></span></div>
-					<div onclick="loadControl(this);" id="tony" class="list-group-item">Tony's Bedroom <span class="glyphicon pull-right" style="font-size:20px"></span></div>
-					<div onclick="loadControl(this);" id="wanda" class="list-group-item">Wanda's Bedroom <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+			<div id="lightList" class="col-xs-3 right-border" style="padding-right:0px; padding-left:0px;">
+				<div class="list-group no-margin sharp-edge">
+					<div onclick="loadControl(this);" id="kitchen" class="list-group-item item-colour active-list">Kitchen <span class="glyphicon glyphicon-flash pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="dining" class="list-group-item item-colour">Dining Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="study" class="list-group-item item-colour">Study Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="garage" class="list-group-item item-colour">Garage <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="living" class="list-group-item item-colour">Living Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="guest" class="list-group-item item-colour">Guest Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="master" class="list-group-item item-colour">Master Bedroom <span class="glyphicon pull-right" style="font-size:20px"></span></div>
+					<div onclick="loadControl(this);" id="wanda" class="list-group-item item-colour">Wanda's Bedroom <span class="glyphicon pull-right" style="font-size:20px"></span></div>
 				</div>
 			</div>
 			
-			<div id="lightControl" class="col-xs-9">
+			<div id="lightControl" class="col-xs-9 " style="padding-right:0px">
 			
 				<div class="row">
 					<div class="col-xs-12 ">
