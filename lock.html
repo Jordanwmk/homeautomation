@@ -40,7 +40,7 @@
 	
 		<div class="row">
 		
-			<div class="col-xs-3 right-border" style="padding-right:0px">
+			<div id="lockList" class="col-xs-3 right-border" style="padding-right:0px">
 				<div class="panel-group no-margin">
 				
 					<div class="panel panel-default">
@@ -147,11 +147,18 @@
 <script>
 var currentRoom = null;
 var currentControl = null;
-var counter = 0;
+var currentList = null;
 
 $(document).ready(function(){
-	localStorage.clear(); //remove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    loadDoorControl();
+	if (sessionStorage.getItem("firstDoor") == "no"){
+		//do nothing
+	} else {
+		sessionStorage.setItem("firstDoor", "yes");
+	}
+	
+	loadDoorList();
+	loadDoorControl();
+
 });
 
 function lock(e){
@@ -161,6 +168,9 @@ function lock(e){
 	
 	$("#lockBtn").addClass("disabled");
 	$("#unlockBtn").removeClass("disabled");
+	
+	currentControl = JSON.stringify($("#lockControl").html());	
+	sessionStorage.setItem(currentRoom, currentControl);
 }
 
 function unlock(e){
@@ -170,11 +180,57 @@ function unlock(e){
 
 	$("#lockBtn").removeClass("disabled");
 	$("#unlockBtn").addClass("disabled");
+	
+	currentControl = JSON.stringify($("#lockControl").html());	
+	sessionStorage.setItem(currentRoom, currentControl);
+}
+
+function loadDoorList(){
+	
+	if ((sessionStorage.getItem("lockList") != null) && (sessionStorage.getItem("lockList") != "")){
+		currentList = JSON.parse(sessionStorage.getItem("lockList"));
+		$("#lockList").html(currentList);
+	} else {
+		$("#lockList").load("http://homeauto.azurewebsites.net/lockList.html");
+	}
+	
+	window.onbeforeunload = function() {
+		currentList = JSON.stringify($("#lockList").html());	
+		sessionStorage.setItem("lockList", currentList);
+	}
 }
 
 function loadDoorControl(e){
 
-	if (counter == 0){
+	if (typeof e === "undefined"){
+		currentRoom = "back";
+	}
+	
+	if (sessionStorage.getItem("firstDoor") == "yes"){
+		currentRoom = "kitchen";	
+		sessionStorage.setItem("firstDoor", "no");
+
+	} else {
+		
+		if (typeof e !== "undefined"){
+			currentRoom = e.id;
+		}
+		
+		if ((sessionStorage.getItem(currentRoom) != null) && (sessionStorage.getItem(currentRoom) != "")){ //load cached
+			currentControl = JSON.parse(sessionStorage.getItem(currentRoom));
+			$("#lockList").html(currentControl);	
+		} else {	//load new
+			$("#lockList").load("http://homeauto.azurewebsites.net/lockList.html");
+		}
+		
+		$(".list-group-item").removeClass("active-list");
+		$("#" + currentRoom).addClass("active-list");
+		
+	}
+	
+	
+
+	/*if (counter == 0){
 		currentRoom = "back";
 	}
 
@@ -196,13 +252,30 @@ function loadDoorControl(e){
 		}
 	}
 
-	counter++;
+	counter++;*/
 	
 }
 
 function loadWindowControl(e){
 
-	currentControl = JSON.stringify($("#lockControl").html());
+
+		
+	$(".list-group-item").removeClass("active-list");
+	$("#" + currentRoom).addClass("active-list");
+	
+	currentRoom = e.id;
+	
+	if ((sessionStorage.getItem(currentRoom) != null) && (sessionStorage.getItem(currentRoom) != "")){ //load cached
+		currentControl = JSON.parse(sessionStorage.getItem(currentRoom));
+		$("#lockControl").html(currentControl);	
+	} else {	//load new
+		$("#lockControl").load("http://homeauto.azurewebsites.net/windowControl.html");
+	}
+		
+
+	
+
+	/*currentControl = JSON.stringify($("#lockControl").html());
 	localStorage[currentRoom] = currentControl;
 	
 
@@ -217,7 +290,7 @@ function loadWindowControl(e){
 		$("#lockControl").html(currentControl);	
 	} else {	//load new
 		$("#lockControl").load("http://homeauto.azurewebsites.net/windowControl.html");
-	}
+	}*/
 
 }
 

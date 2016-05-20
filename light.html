@@ -163,12 +163,9 @@
 var currentRoom = null;
 var currentControl = null;
 var currentList = null;
-//var counter = 0;
 
 
-$(document).ready(function(){
-	//localStorage.clear(); //remove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	
+$(document).ready(function(){	
 	if (sessionStorage.getItem("first") == "no"){
 		//do nothing
 	} else {
@@ -247,18 +244,13 @@ function loadControl(e){
 	
 }
 
-function loadWrapper(){
-	$("#lightControl").load("http://homeauto.azurewebsites.net/lightControl.html");
-}
-
 function cfmTime(){
 	$("#cfmTime").show();
 }
 
 function toggleTime(e){
 	var currentText = $(e).text();
-	console.log(e);
-	console.log("currently" + currentText);
+
 	if (currentText == "On"){
 		$(e).text("Off");
 	} else {
