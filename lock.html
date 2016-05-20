@@ -202,12 +202,15 @@ function loadDoorList(){
 
 function loadDoorControl(e){
 
+	currentControl = JSON.stringify($("#lockControl").html());	
+	sessionStorage.setItem(currentRoom, currentControl);
+
 	if (typeof e === "undefined"){
 		currentRoom = "back";
 	}
 	
 	if (sessionStorage.getItem("firstDoor") == "yes"){
-		currentRoom = "kitchen";	
+		currentRoom = "back";	
 		sessionStorage.setItem("firstDoor", "no");
 
 	} else {
@@ -218,9 +221,9 @@ function loadDoorControl(e){
 		
 		if ((sessionStorage.getItem(currentRoom) != null) && (sessionStorage.getItem(currentRoom) != "")){ //load cached
 			currentControl = JSON.parse(sessionStorage.getItem(currentRoom));
-			$("#lockList").html(currentControl);	
+			$("#lockControl").html(currentControl);	
 		} else {	//load new
-			$("#lockList").load("http://homeauto.azurewebsites.net/lockList.html");
+			$("#lockControl").load("http://homeauto.azurewebsites.net/doorControl.html");
 		}
 		
 		$(".list-group-item").removeClass("active-list");
@@ -228,40 +231,12 @@ function loadDoorControl(e){
 		
 	}
 	
-	
-
-	/*if (counter == 0){
-		currentRoom = "back";
-	}
-
-	currentControl = JSON.stringify($("#lockControl").html());
-	localStorage[currentRoom] = currentControl;
-	
-	if (counter != 0){
-	
-		$(".list-group-item").removeClass("active-list");
-		$(e).addClass("active-list");
-	
-		currentRoom = e.id;
-
-		if (localStorage[currentRoom] != null && localStorage[currentRoom] != ""){ //load cached
-			currentControl = JSON.parse(localStorage[currentRoom]);
-			$("#lockControl").html(currentControl);	
-		} else {	//load new
-			$("#lockControl").load("http://homeauto.azurewebsites.net/doorControl.html");
-		}
-	}
-
-	counter++;*/
-	
 }
 
 function loadWindowControl(e){
 
-
-		
-	$(".list-group-item").removeClass("active-list");
-	$("#" + currentRoom).addClass("active-list");
+	currentControl = JSON.stringify($("#lockControl").html());	
+	sessionStorage.setItem(currentRoom, currentControl);
 	
 	currentRoom = e.id;
 	
@@ -271,6 +246,9 @@ function loadWindowControl(e){
 	} else {	//load new
 		$("#lockControl").load("http://homeauto.azurewebsites.net/windowControl.html");
 	}
+	
+	$(".list-group-item").removeClass("active-list");
+	$("#" + currentRoom).addClass("active-list");
 		
 
 	

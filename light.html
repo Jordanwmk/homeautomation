@@ -215,6 +215,9 @@ function loadList(){
 }
 
 function loadControl(e){	
+
+	currentControl = JSON.stringify($("#lightControl").html());	
+	sessionStorage.setItem(currentRoom, currentControl);
 	
 	if (typeof e === "undefined"){
 		currentRoom = "kitchen";
