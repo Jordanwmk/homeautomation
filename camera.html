@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="css/style.css" rel="stylesheet"/>
+	<link href="css/font-awesome.css" rel="stylesheet"/>
+	<link href="css/bootstrap-square.css" rel="stylesheet"/>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -16,43 +18,48 @@
 
 <div class="container">
 
-	<div class="navbar navbar-inverse sharp-edge">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="index.html">XYZ Home Automation</a>
+	<div class="container-fluid page-border no-padding">
+
+		<div class="row no-margin navbar-colour" style="min-height:80px;">
+		
+			<div class="col-xs-1" style="min-width:80px; min-height:70px;">
+				<img class="img-responsive pull-left pointable" onclick="window.location.href='index.html'" src="img/logo.png" style="margin-top:6px; min-width:70px; min-height:70px;"/>
+			</div>
+			
+			<div class="col-xs-10 no-padding">
+				<h2 class="navbar-brand pointable" style="padding-left:0px; font-size:29px;" onclick="window.location.href='index.html'" >Main Menu ></h2>
+				<h2 class="navbar-brand pointable-default" style="padding-left:0px; font-size:29px;">Video Surveillance</h2>
+			</div>
+			
+			<div class="col-xs-1 no-padding" style="padding-right:20px">
+				<div class="menu-options" style="height:80px;">
+					<i class="fa fa-bars fa-3x pull-right pointable" style="text-align: center; color:white;" aria-hidden="true"></i>
+				</div>
 			</div>
 
-			<div class="nav navbar-nav navbar-right">
-				<li><a><span class="glyphicon glyphicon-list"></span></a></li>
-			</div>
 		</div>
+		
 	</div>
 	
 	<div class="container-fluid page-border no-padding">
 	
-		<div class="row bottom-border" style="width:100%; margin-left:0px;">
-			<div class="col-xs-12">
-				<h2>Video Surveillance <a href="index.html" style="color:green"><span class="glyphicon glyphicon-home pull-right" style="font-size:30px"></span></a></h2>
-			</div>
-		</div>
-	
-		<div class="row">
+		<div class="row" style="padding-left:15px; padding-right:15px;">
 		
-			<div class="col-xs-3 right-border" style="padding-right:0px">
+			<div class="col-xs-3 right-border list-group-colour" style="padding-right:0px; padding-left:0px;">
 				<div class="list-group no-margin">
-					<div class="list-group-item" id="img/front.jpg" onclick="changeImage(this)"> Front Door</div>
-					<div class="list-group-item" id="img/back.jpg" onclick="changeImage(this)">Back Door</div>
-					<div class="list-group-item" id="img/garage.jpg" onclick="changeImage(this)">Garage</div>
-					<div class="list-group-item" id="img/living.jpg" onclick="changeImage(this)">Living Room</div>
-					<div class="list-group-item" id="img/guest.jpg" onclick="changeImage(this)">Guest Room</div>
-					<div class="list-group-item" id="img/master.jpg" onclick="changeImage(this)">Master Bedroom</div>
-					<div class="list-group-item" id="img/girl.jpg" onclick="changeImage(this)">Wanda's Bedroom</div>
+					<div class="list-group-item item-colour" id="img/front.jpg" onclick="changeImage(this)"> Front Door</div>
+					<div class="list-group-item item-colour" id="img/back.jpg" onclick="changeImage(this)">Back Door</div>
+					<div class="list-group-item item-colour" id="img/garage.jpg" onclick="changeImage(this)">Garage</div>
+					<div class="list-group-item item-colour" id="img/living.jpg" onclick="changeImage(this)">Living Room</div>
+					<div class="list-group-item item-colour" id="img/guest.jpg" onclick="changeImage(this)">Guest Room</div>
+					<div class="list-group-item item-colour" id="img/master.jpg" onclick="changeImage(this)">Master Bedroom</div>
+					<div class="list-group-item item-colour" id="img/girl.jpg" onclick="changeImage(this)">Wanda's Bedroom</div>
 				</div>
 			</div>
 			
-			<div class="col-xs-9" style="padding-left:0px">
+			<div class="col-xs-9 list-group-colour" style="padding-right:0px; padding-left:0px;">
 				<img id="videoFeed" class="img-responsive center-block"/>
-				<h2 id="pholder" class="text-center" style="padding-bottom:0px;">Please select an item from the list</h2>
+				<h2 id="pholder" class="text-center" style="padding-bottom:0px; color:white; font-weight: bold;">Please select an item from the list</h2>
 			</div>
 
 		</div>

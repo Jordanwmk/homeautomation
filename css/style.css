@@ -143,8 +143,14 @@
 	background-color:rgb(40,60,80);
 	border-color: rgb(30,50,60);
 	border-top-style: solid;
+	border-top-width:2px;
     border-right-width: 0px;
     border-left-width: 0px;
+}
+
+.list-group-item:hover {
+	background-color:rgb(60,120,120);
+	border-color:rgb(60,120,120);
 }
 
 .list-group-item:first-child {
@@ -173,6 +179,7 @@
 
 .active-list {
 	background-color:rgb(80,160,130);
+	cursor:default;
 }
 
 .btn{
