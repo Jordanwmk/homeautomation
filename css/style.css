@@ -37,19 +37,23 @@
 }
 
 .left-border {
-    border-left: solid 1px black;
+    border-left: solid 1px;
+	border-color: rgb(30,50,60);
 }
 
 .right-border {
-    border-right: solid 1px black;
+    border-right: solid 1px;
+	border-color: rgb(30,50,60);
 }
 
 .top-border {
-    border-top: solid 1px black;
+    border-top: solid 1px;
+	border-color: rgb(30,50,60);
 }
 
 .bottom-border {
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px;
+	border-color: rgb(30,50,60);
 }
 
 .text-center{
@@ -90,13 +94,6 @@
 	cursor: default;
 }
 
-.navbar-colour {
-	background-color: rgb(40,60,80);
-	-webkit-box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
-	-moz-box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
-	box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
-}
-
 .container-border {
 	-webkit-box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
 	-moz-box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
@@ -111,6 +108,13 @@
     border-right-style: none;
     border-bottom-style: none;
     border-left-style: none;
+}
+
+.navbar-colour {
+	background-color: rgb(40,60,80);
+	-webkit-box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
+	-moz-box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
+	box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
 }
 
 .navbar-colour h2 {
@@ -136,11 +140,15 @@
 }
 
 .list-group-item {
-	background-color:rgb(150,220,200);
-	border-color: rgb(70,120,120);
+	background-color:rgb(40,60,80);
+	border-color: rgb(30,50,60);
+	border-top-style: solid;
+    border-right-width: 0px;
+    border-left-width: 0px;
 }
 
 .list-group-item:first-child {
+	border-top-style: none;
 	border-radius:0px;
 }
 
@@ -149,10 +157,42 @@
 	margin-bottom: 0;
 }
 
+.list-group-colour {
+	background-color:rgb(40,60,80);
+}
+
+.list-group-colour h2, h4{
+	color:rgb(255,255,255);
+	font-weight: bold;
+}
+
 .item-colour  {
-	color:white;
+	color:rgb(255,255,255);
+	font-weight: bold;
 }
 
 .active-list {
 	background-color:rgb(80,160,130);
+}
+
+.btn{
+	color:rgb(255,255,255);
+	font-weight: bold;
+	background-color:rgb(80,160,130);
+	border-color:rgb(80,160,130);
+}
+
+.btn:hover{
+	background-color:rgb(60,120,120);
+	border-color:rgb(60,120,120);
+}
+
+.btn:active{
+	background-color:rgb(60,120,120);
+	border-color:rgb(60,120,120);
+}
+
+.disabled, .btn:focus{
+	background-color:rgb(80,100,120);
+	border-color:rgb(80,100,120);
 }

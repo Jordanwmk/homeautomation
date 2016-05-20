@@ -5,17 +5,17 @@
 		
 		<div class="row" style="padding-top:10px; padding-right:10px;">
 			<div class="col-xs-4">
-				<button type="button" class="btn btn-primary center-block btn-block disabled" onclick="lightOff(this)">Off</button>
+				<button type="button" class="btn center-block btn-block " onclick="lightOff(this)">Off</button>
 				<h4 class="text-center"> 0% </h4>
 			</div>
 			
 			<div class="col-xs-4">
-				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">Dim</button>
+				<button type="button" class="btn center-block btn-block" onclick="lightOn(this)">Dim</button>
 				<h4 class="text-center"> 25% </h4>
 			</div>
 			
 			<div class="col-xs-4">
-				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">Eco</button>
+				<button type="button" class="btn center-block btn-block" onclick="lightOn(this)">Eco</button>
 				<h4 class="text-center"> 50% </h4>
 			</div>
 		</div>
@@ -23,16 +23,17 @@
 				
 		<div class="row" style="padding-top:10px; padding-right:10px;">
 			<div class="col-xs-4">
-				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">High</button>
+				<button type="button" class="btn center-block btn-block" onclick="lightOn(this)">High</button>
 				<h4 class="text-center"> 75% </h4>
 			</div>
 			
 			<div class="col-xs-4">
-				<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">Max</button>
+				<button type="button" class="btn center-block btn-block disabled" onclick="lightOn(this)">Max</button>
 				<h4 class="text-center"> 100% </h4>
 			</div>
 			
-			<div class="col-xs-4"> 
+			<div class="col-xs-4">
+
 			</div>
 			
 		</div>
@@ -47,42 +48,42 @@
 	
 		<h2>
 			Timer
-			<button type="button" style="margin-right:10px;" onclick="toggleTime(this)" class="btn btn-primary pull-right" data-toggle="collapse" data-target="#timer">On</button>
+			<button type="button" style="margin-right:10px;" onclick="toggleTime(this)" class="btn pull-right" data-toggle="collapse" data-target="#timer">On</button>
 		</h2>
 		
 		<div id="timer" class="collapse">
 			
 			<div class="row" style="padding-top:10px; padding-right:10px;">
 				<div class="col-xs-4">
-					<button type="button" class="btn btn-primary center-block btn-block">5 min</button>
+					<button type="button" class="btn center-block btn-block" onclick="cfmTime()">5 min</button>
 				</div>
 				
 				<div class="col-xs-4">
-					<button type="button" class="btn btn-primary center-block btn-block">15 min</button>
+					<button type="button" class="btn center-block btn-block" onclick="cfmTime()">15 min</button>
 				</div>
 				
 				<div class="col-xs-4">
-					<button type="button" class="btn btn-primary center-block btn-block">30 min</button>
+					<button type="button" class="btn center-block btn-block" onclick="cfmTime()">30 min</button>
 				</div>
 			</div>
 			
 					
-			<div class="row" style="padding-top:10px; padding-right:10px; ">
+			<div class="row" style="padding-top:10px; padding-right:10px; padding-bottom:10px;">
 				<div class="col-xs-4">
-					<button type="button" class="btn btn-primary center-block btn-block">1 hr</button>
+					<button type="button" class="btn center-block btn-block" onclick="cfmTime()">1 hr</button>
 				</div>
 				
 				<div class="col-xs-4">
-					<button type="button" class="btn btn-primary center-block btn-block">2 hr</button>
+					<button type="button" class="btn center-block btn-block" onclick="cfmTime()">2 hr</button>
 				</div>
 				
 				<div class="col-xs-4">
-					<button type="button" class="btn btn-primary center-block btn-block">3 hr</button>
+					<button type="button" class="btn center-block btn-block" onclick="cfmTime()">3 hr</button>
 				</div>
 				
 			</div>
 			
-			<div class="row" style="padding-top:10px; padding-right:10px; padding-bottom:15px;">
+			<div class="row" id="cfmTime" style="padding-top:10px; padding-right:10px; padding-bottom:15px; display:none;">
 				<div class="col-xs-12">
 					<h3 class="text-center">Timer Set! <span class="glyphicon glyphicon-ok" style="color:green"></span></h3>
 				</div>			

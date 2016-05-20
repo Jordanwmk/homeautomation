@@ -45,7 +45,7 @@
 	
 		<div class="row" style="padding-left:15px; padding-right:15px;">
 		
-			<div id="lightList" class="col-xs-3 right-border" style="padding-right:0px; padding-left:0px;">
+			<div id="lightList" class="col-xs-3 right-border list-group-colour" style="padding-right:0px; padding-left:0px;">
 				<div class="list-group no-margin sharp-edge">
 					<div onclick="loadControl(this);" id="kitchen" class="list-group-item item-colour active-list">Kitchen <span class="glyphicon glyphicon-flash pull-right" style="font-size:20px"></span></div>
 					<div onclick="loadControl(this);" id="dining" class="list-group-item item-colour">Dining Room <span class="glyphicon pull-right" style="font-size:20px"></span></div>
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 			
-			<div id="lightControl" class="col-xs-9 " style="padding-right:0px">
+			<div id="lightControl" class="col-xs-9 list-group-colour" style="padding-right:0px">
 			
 				<div class="row">
 					<div class="col-xs-12 ">
@@ -67,17 +67,17 @@
 						
 						<div class="row" style="padding-top:10px; padding-right:10px;">
 							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block " onclick="lightOff(this)">Off</button>
+								<button type="button" class="btn center-block btn-block " onclick="lightOff(this)">Off</button>
 								<h4 class="text-center"> 0% </h4>
 							</div>
 							
 							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">Dim</button>
+								<button type="button" class="btn center-block btn-block" onclick="lightOn(this)">Dim</button>
 								<h4 class="text-center"> 25% </h4>
 							</div>
 							
 							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">Eco</button>
+								<button type="button" class="btn center-block btn-block" onclick="lightOn(this)">Eco</button>
 								<h4 class="text-center"> 50% </h4>
 							</div>
 						</div>
@@ -85,12 +85,12 @@
 								
 						<div class="row" style="padding-top:10px; padding-right:10px;">
 							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block" onclick="lightOn(this)">High</button>
+								<button type="button" class="btn center-block btn-block" onclick="lightOn(this)">High</button>
 								<h4 class="text-center"> 75% </h4>
 							</div>
 							
 							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary center-block btn-block disabled" onclick="lightOn(this)">Max</button>
+								<button type="button" class="btn center-block btn-block disabled" onclick="lightOn(this)">Max</button>
 								<h4 class="text-center"> 100% </h4>
 							</div>
 							
@@ -110,37 +110,37 @@
 					
 						<h2>
 							Timer
-							<button type="button" style="margin-right:10px;" onclick="toggleTime(this)" class="btn btn-primary pull-right" data-toggle="collapse" data-target="#timer">On</button>
+							<button type="button" style="margin-right:10px;" onclick="toggleTime(this)" class="btn pull-right" data-toggle="collapse" data-target="#timer">On</button>
 						</h2>
 						
 						<div id="timer" class="collapse">
 							
 							<div class="row" style="padding-top:10px; padding-right:10px;">
 								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">5 min</button>
+									<button type="button" class="btn center-block btn-block" onclick="cfmTime()">5 min</button>
 								</div>
 								
 								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">15 min</button>
+									<button type="button" class="btn center-block btn-block" onclick="cfmTime()">15 min</button>
 								</div>
 								
 								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">30 min</button>
+									<button type="button" class="btn center-block btn-block" onclick="cfmTime()">30 min</button>
 								</div>
 							</div>
 							
 									
 							<div class="row" style="padding-top:10px; padding-right:10px; padding-bottom:10px;">
 								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">1 hr</button>
+									<button type="button" class="btn center-block btn-block" onclick="cfmTime()">1 hr</button>
 								</div>
 								
 								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">2 hr</button>
+									<button type="button" class="btn center-block btn-block" onclick="cfmTime()">2 hr</button>
 								</div>
 								
 								<div class="col-xs-4">
-									<button type="button" class="btn btn-primary center-block btn-block" onclick="cfmTime()">3 hr</button>
+									<button type="button" class="btn center-block btn-block" onclick="cfmTime()">3 hr</button>
 								</div>
 								
 							</div>
@@ -177,8 +177,8 @@ $(document).ready(function(){
 		sessionStorage.setItem("first", "yes");
 	}
     
-	loadList();
-	loadControl();
+	//loadList();
+	//loadControl();
 	$("#cfmTime").hide();
 });
 
