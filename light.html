@@ -249,10 +249,18 @@ function loadControl(e){
 }
 
 function cfmTime(){
+
+	currentControl = JSON.stringify($("#lightControl").html());	
+	sessionStorage.setItem(currentRoom, currentControl);
+	
 	$("#cfmTime").show();
 }
 
 function toggleTime(e){
+
+	currentControl = JSON.stringify($("#lightControl").html());	
+	sessionStorage.setItem(currentRoom, currentControl);
+	
 	$("#cfmTime").hide();
 }
 </script>
