@@ -189,6 +189,9 @@ function lightOff(e){
 	
 	currentControl = JSON.stringify($("#lightControl").html());	
 	sessionStorage.setItem(currentRoom, currentControl);
+	
+	currentList = JSON.stringify($("#lightList").html());	
+	sessionStorage.setItem("lightList", currentList);
 }
 
 function lightOn(e){
@@ -200,6 +203,9 @@ function lightOn(e){
 	
 	currentControl = JSON.stringify($("#lightControl").html());	
 	sessionStorage.setItem(currentRoom, currentControl);
+	
+	currentList = JSON.stringify($("#lightList").html());	
+	sessionStorage.setItem("lightList", currentList);
 }
 
 function loadList(){
