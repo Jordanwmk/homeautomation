@@ -143,9 +143,7 @@ function lock(e){
 	$(temp).removeClass("fa-unlock-alt");
 	$(temp).addClass("fa-lock");
 	
-	console.log('change');
 	$("#titleLock").html("Currently : Locked");
-	console.log($('#titleLock').html());
 	
 	$("#lockBtn").addClass("disabled");
 	$("#unlockBtn").removeClass("disabled");
@@ -159,9 +157,7 @@ function unlock(e){
 	$(temp).removeClass("fa-lock");
 	$(temp).addClass("fa-unlock-alt");
 
-	console.log('change');
 	$("#titleLock").html("Currently : Unlocked");
-	console.log($('#titleLock').html());
 
 	$("#lockBtn").removeClass("disabled");
 	$("#unlockBtn").addClass("disabled");
@@ -214,16 +210,9 @@ function loadDoorControl(e){
 		var temp = '#' + currentRoom + ' .fa-unlock-alt';
 
 		if ($(temp).length > 0){
-		console.log('1');
-			
 			$("#titleLock").html("Currently : Unlocked");
-
-		} else {
-		console.log('2');
-		
-			
+		} else {	
 			$("#titleLock").html("Currently : Locked");
-			
 		}
 		
 		$(".list-group-item").removeClass("active-list");
