@@ -64,16 +64,16 @@
 			
 			<div id="lockControl" class="col-xs-9 list-group-colour" style="padding-right:0px">
 			
-				<h2>Currently : <i id="titleLock" class="fa fa-unlock-alt" aria-hidden="true"></i></h2>
+				<h2 id="titleLock">Currently : Unlocked</h2>
 			
 				<div class="row" style="padding-top:10px; padding-right:10px;">
 				
 					<div class="col-xs-6">
-						<button type="button" id="lockBtn" class="btn btn-primary center-block btn-block" onclick="lock(this)">Lock</button>
+						<button type="button" id="lockBtn" class="btn center-block btn-block" onclick="lock(this)">Lock</button>
 					</div>
 					
 					<div class="col-xs-6">
-						<button type="button" id="unlockBtn" class="btn btn-primary center-block btn-block disabled" onclick="unlock(this)">Unlock</button>
+						<button type="button" id="unlockBtn" class="btn center-block btn-block disabled" onclick="unlock(this)">Unlock</button>
 					</div>
 					
 				</div>
@@ -104,8 +104,8 @@
 							<div class="row" style="padding-top:10px; padding-bottom:10px;">
 							
 								<div class="col-xs-12">
-									<button type="button" id="change" class="btn btn-primary disabled">Change</button>
-									<button type="button" id="cancel" class="btn btn-primary disabled">Cancel</button>
+									<button type="button" id="change" class="btn disabled">Change</button>
+									<button type="button" id="cancel" class="btn disabled">Cancel</button>
 								</div>
 
 							</div>
@@ -134,7 +134,7 @@ $(document).ready(function(){
 	}
 	
 	loadDoorList();
-	loadDoorControl();
+	//loadDoorControl();
 
 });
 
@@ -142,8 +142,8 @@ function lock(e){
 	var temp = "#" + currentRoom + " > i";
 	$(temp).removeClass("fa-unlock-alt");
 	$(temp).addClass("fa-lock");
-	$("#titleLock").removeClass("fa-unlock-alt");
-	$("#titleLock").addClass("fa-lock");
+
+	$("#titleLock").html = "Currently : Locked";
 	
 	$("#lockBtn").addClass("disabled");
 	$("#unlockBtn").removeClass("disabled");
@@ -156,8 +156,9 @@ function unlock(e){
 	var temp = "#" + currentRoom + " > i";
 	$(temp).removeClass("fa-lock");
 	$(temp).addClass("fa-unlock-alt");
-	$("#titleLock").removeClass("fa-lock");
-	$("#titleLock").addClass("fa-unlock-alt");
+	
+	$("#titleLock").html = "Currently : Unlocked";
+
 
 	$("#lockBtn").removeClass("disabled");
 	$("#unlockBtn").addClass("disabled");
@@ -207,10 +208,23 @@ function loadDoorControl(e){
 			$("#lockControl").load("http://homeauto.azurewebsites.net/doorControl.html");
 		}
 		
+		var temp = '#' + currentRoom + ' .fa-unlock-alt';
+
+		if ($(temp).length > 0){
+		console.log('1');
+			$("#titleLock").html = "Currently : Unlocked";
+
+		} else {
+		console.log('2');
+			$("#titleLock").html = "Currently : Locked";
+		}
+		
 		$(".list-group-item").removeClass("active-list");
 		$("#" + currentRoom).addClass("active-list");
 		
 	}
+	
+	
 	
 	window.onbeforeunload = function() {
 		currentControl = JSON.stringify($("#lockControl").html());	
