@@ -1,3 +1,6 @@
+body {
+	background-color:rgb(248,248,248);
+}
 .container {
 	padding:0px;
 }
@@ -38,6 +41,7 @@
 .page-border{
 	border-style: solid;
     border-width: 1px;
+	border-color: white;
 }
 
 .left-border {
@@ -99,9 +103,9 @@
 }
 
 .container-border {
-	-webkit-box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
-	-moz-box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
-	box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
 }
 
 .top-border {
@@ -115,10 +119,10 @@
 }
 
 .navbar-colour {
-	background-color: rgb(40,60,80);
-	-webkit-box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
-	-moz-box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
-	box-shadow: 0px 0px 21px 1px rgba(33,51,68,1);
+	background-color: rgb(0,0,80);
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
 }
 
 .navbar-colour h2 {
@@ -135,17 +139,17 @@
 }
 
 .btnColour {
-	background-color: rgb(40,60,80);
+	background-color: rgb(255,255,255);
 }
 
 .btnColour h3{
-	color: rgb(255,255,255);
+	color: rgb(0,0,80);
 }
 
 .btnBorder {
 	border-style: solid;
 	border-width: 3px;
-	border-color: rgb(35,51,70);
+	border-color: rgb(233,233,233);
 }
 
 .menu-options i{
@@ -193,6 +197,7 @@
 .active-list {
 	background-color:rgb(80,160,130);
 	cursor:default;
+	border-left:5px solid red;
 }
 
 .btn{
