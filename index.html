@@ -4,6 +4,7 @@
 	<title>XYZ</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="favicon.ico"/>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="css/style.css" rel="stylesheet"/>
 	<link href="css/font-awesome.css" rel="stylesheet"/>
@@ -27,12 +28,14 @@
 			</div>
 			
 			<div class="col-xs-10 no-padding">
-				<h2 class="navbar-brand pointable" style="padding-left:0px; font-size:29px;" >Main Menu</h2>
+				<h2 class="navbar-brand pointable main-menu" style="padding-left:5px; font-size:29px;">Main Menu</h2>
+				<h2 class="navbar-brand pointable-default pull-right" style="padding-right:0px; font-size:20px;" >Rebecca Stones</h2>
 			</div>
 			
 			<div class="col-xs-1 no-padding" style="padding-right:20px">
 				<div class="menu-options" style="height:80px;">
-					<i class="fa fa-bars fa-3x pull-right pointable" style="text-align: center; color:white;" aria-hidden="true"></i>
+					<i class="fa fa-bars fa-3x pull-right pointable left-border" style="padding-left:15px; text-align:center; color:white;" aria-hidden="true"
+					data-toggle="tooltip" data-placement="bottom" title="More options"></i>
 				</div>
 			</div>
 
@@ -50,12 +53,12 @@
 			</div>
 			
 			<div class="col-xs-4 pointable btnColour btnBorder" style="padding-top:10px; border-top:0px; border-left:0px;">
-					<img src="img/temperature.png" class="img-responsive center-block" style="padding-top:20px;"/>
+					<img src="img/temperature.png" class="img-responsive center-block" style="padding-top:20px;" data-toggle="tooltip" data-placement="right" title="Out-of-scope link"/>
 					<h3 class="text-center">Temperature</h3>
 			</div>
 			
 			<div class="col-xs-4 pointable btnColour btnBorder" style="padding-top:10px; border-top:0px; border-left:0px; border-right:0px;">
-					<img src="img/power.png" class="img-responsive center-block" style="padding-top:20px;"/>
+					<img src="img/power.png" class="img-responsive center-block" style="padding-top:20px;" data-toggle="tooltip" data-placement="right" title="Out-of-scope link"/>
 					<h3 class="text-center">Power</h3>
 			</div>
 			
@@ -73,7 +76,7 @@
 			</div>
 			
 			<div class="col-xs-4 pointable btnColour btnBorder" style="padding-top:10px; border-bottom:0px; border-left:0px; border-right:0px;">
-					<img src="img/app.png" class="img-responsive center-block" style="padding-top:20px;"/>
+					<img src="img/app.png" class="img-responsive center-block" style="padding-top:20px;" data-toggle="tooltip" data-placement="right" title="Out-of-scope link"/>
 					<h3 class="text-center">Appliances</h3>
 			</div>
 		</div>
@@ -84,5 +87,11 @@
 </div>
 
 </body>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
 
 </html>

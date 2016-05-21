@@ -8,6 +8,10 @@
 	border-color:red;
 }
 
+.tooltip {
+    position: fixed;
+}
+
 .no-padding{
 	padding:0px;
 }
@@ -123,6 +127,11 @@
 
 .navbar-brand {
 	font-weight:bold;
+}
+
+.main-menu:hover {
+	background-color:rgb(60,120,120);
+	border-color:rgb(60,120,120);
 }
 
 .btnColour {
