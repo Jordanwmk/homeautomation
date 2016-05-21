@@ -64,7 +64,7 @@
 			
 			<div id="lockControl" class="col-xs-9 list-group-colour" style="padding-right:0px">
 			
-				<h2>Currently <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></h2>
+				<h2>Currently : <i id="titleLock" class="fa fa-unlock-alt" aria-hidden="true"></i></h2>
 			
 				<div class="row" style="padding-top:10px; padding-right:10px;">
 				
@@ -134,7 +134,7 @@ $(document).ready(function(){
 	}
 	
 	loadDoorList();
-	//loadDoorControl();
+	loadDoorControl();
 
 });
 
@@ -142,6 +142,8 @@ function lock(e){
 	var temp = "#" + currentRoom + " > i";
 	$(temp).removeClass("fa-unlock-alt");
 	$(temp).addClass("fa-lock");
+	$("#titleLock").removeClass("fa-unlock-alt");
+	$("#titleLock").addClass("fa-lock");
 	
 	$("#lockBtn").addClass("disabled");
 	$("#unlockBtn").removeClass("disabled");
@@ -154,6 +156,8 @@ function unlock(e){
 	var temp = "#" + currentRoom + " > i";
 	$(temp).removeClass("fa-lock");
 	$(temp).addClass("fa-unlock-alt");
+	$("#titleLock").removeClass("fa-lock");
+	$("#titleLock").addClass("fa-unlock-alt");
 
 	$("#lockBtn").removeClass("disabled");
 	$("#unlockBtn").addClass("disabled");
